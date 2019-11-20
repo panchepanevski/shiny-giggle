@@ -2,6 +2,18 @@ import React from "react";
 import Square from "./Square";
 import { calculateWinner } from "./winner";
 import Status from "./Status";
+import styled from "@emotion/styled";
+
+const GameFlex = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  height: 300px;
+  width: 300px;
+
+  & Square {
+    padding: 5px;
+  }
+`;
 
 export default function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null));
@@ -31,7 +43,7 @@ export default function Board() {
   return (
     <div>
       <Status>{status}</Status>
-      <div>
+      <GameFlex>
         <Square
           value={squares[0]}
           onClick={() => {
@@ -50,8 +62,6 @@ export default function Board() {
             handleClick(2);
           }}
         />
-      </div>
-      <div>
         <Square
           value={squares[3]}
           onClick={() => {
@@ -70,8 +80,6 @@ export default function Board() {
             handleClick(5);
           }}
         />
-      </div>
-      <div>
         <Square
           value={squares[6]}
           onClick={() => {
@@ -90,7 +98,7 @@ export default function Board() {
             handleClick(8);
           }}
         />
-      </div>
+      </GameFlex>
     </div>
   );
 }
