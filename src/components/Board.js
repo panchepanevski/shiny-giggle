@@ -11,7 +11,7 @@ export default function Board() {
   if (winner) {
     status = `Winner: ${winner}`;
   } else {
-    status = status = `Next player: ${xIsNext ? "X" : "0"}`;
+    status = `Next player: ${xIsNext ? "X" : "0"}`;
   }
 
   function handleClick(index) {
