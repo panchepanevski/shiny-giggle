@@ -3,12 +3,16 @@ import Square from "./Square";
 import { calculateWinner } from "./winner";
 import Status from "./Status";
 import styled from "@emotion/styled";
+import Game from "./Game";
 
 const GameFlex = styled.div`
-  display: flex;
-  flex-flow: column wrap;
-  height: 300px;
-  width: 300px;
+  width: ${props => 100 * Math.sqrt(props.size)}px;
+
+  > * {
+    background: #32aaaa;
+    height: 100px;
+    width: 100px;
+  }
 
   & Square {
     padding: 5px;
@@ -43,7 +47,7 @@ export default function Board() {
   return (
     <div>
       <Status>{status}</Status>
-      <GameFlex>
+      <GameFlex size={9}>
         <Square
           value={squares[0]}
           onClick={() => {

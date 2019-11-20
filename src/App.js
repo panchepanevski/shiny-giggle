@@ -5,10 +5,9 @@ import GlobalStyles from "./components/GlobalStyles";
 
 const AppDiv = styled.div`
   text-align: center;
-  background-color: #282c34;
+  background-color: #292929;
   min-height: 100vh;
   min-width: 100vw;
-  font-size: calc(10px + 2vmin);
   color: white;
   display: flex;
   flex-flow: column nowrap;
