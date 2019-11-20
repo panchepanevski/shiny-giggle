@@ -1,6 +1,7 @@
 import React from "react";
 import Square from "./Square";
 import { calculateWinner } from "./winner";
+import Status from "./Status";
 
 export default function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null));
@@ -29,8 +30,8 @@ export default function Board() {
 
   return (
     <div>
-      <div className="status">{status}</div>
-      <div className="board-row">
+      <Status>{status}</Status>
+      <div>
         <Square
           value={squares[0]}
           onClick={() => {
@@ -50,7 +51,7 @@ export default function Board() {
           }}
         />
       </div>
-      <div className="board-row">
+      <div>
         <Square
           value={squares[3]}
           onClick={() => {
@@ -70,7 +71,7 @@ export default function Board() {
           }}
         />
       </div>
-      <div className="board-row">
+      <div>
         <Square
           value={squares[6]}
           onClick={() => {
